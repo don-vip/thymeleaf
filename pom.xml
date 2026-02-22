@@ -107,7 +107,7 @@
   </pluginRepositories>
 
   <properties>
-    <java.version>8</java.version>
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.version}</maven.compiler.release>
@@ -166,7 +166,6 @@
     <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
     <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
     <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
-    <maven-antrun-plugin.version>3.2.0</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
     <maven-versions-plugin.version>2.21.0</maven-versions-plugin.version>
     <maven-cargo-plugin.version>1.10.26</maven-cargo-plugin.version>
@@ -548,12 +547,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-plugin</artifactId>
           <version>${maven-scm-plugin.version}</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>${maven-antrun-plugin.version}</version>
         </plugin>
 
         <plugin>
