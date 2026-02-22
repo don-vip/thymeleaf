@@ -38,7 +38,6 @@ import org.thymeleaf.TemplateEngine;
 
 import static org.thymeleaf.util.ExpressionUtils.*;
 
-
 public final class ExpressionUtilsTest {
 
 
@@ -119,7 +118,6 @@ public final class ExpressionUtilsTest {
         Assertions.assertTrue(isMemberAllowedForInstanceOfType(createTestProxy().getClass(), "someMethod"));
         Assertions.assertTrue(isMemberAllowedForInstanceOfType(Integer.class, "someMethod"));
         Assertions.assertTrue(isMemberAllowedForInstanceOfType(Temporal.class, "someMethod"));
-        Assertions.assertFalse(isMemberAllowedForInstanceOfType(javax.servlet.ServletContext.class, "someMethod"));
         Assertions.assertFalse(isMemberAllowedForInstanceOfType(jakarta.servlet.ServletContext.class, "someMethod"));
         Assertions.assertFalse(isMemberAllowedForInstanceOfType(Runtime.class, "someMethod"));
         Assertions.assertTrue(isMemberAllowedForInstanceOfType(Collection.class, "iterator"));

@@ -43,9 +43,7 @@ public class ThrottledWebTestExecutorArgumentsProvider implements ArgumentsProvi
     private static Stream<TestExecutor> createTestExecutorStream(final int throttleStep) {
         final TestExecutor testExecutorJakarta = TestExecutorFactory.createJakartaWebTestExecutor();
         testExecutorJakarta.setThrottleStep(throttleStep);
-        final TestExecutor testExecutorJavax = TestExecutorFactory.createJavaxWebTestExecutor();
-        testExecutorJavax.setThrottleStep(throttleStep);
-        return Stream.of(testExecutorJakarta, testExecutorJavax);
+        return Stream.of(testExecutorJakarta);
     }
 
 }

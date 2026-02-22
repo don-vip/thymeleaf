@@ -47,7 +47,6 @@
 
   <modules>
     <module>thymeleaf-testing</module>
-    <module>thymeleaf-testing-spring5</module>
     <module>thymeleaf-testing-spring6</module>
   </modules>
 

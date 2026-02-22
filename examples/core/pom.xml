@@ -48,7 +48,6 @@
 
   <modules>
     <module>thymeleaf-examples-gtvg-jakarta</module>
-    <module>thymeleaf-examples-gtvg-javax</module>
   </modules>
 
 </project>

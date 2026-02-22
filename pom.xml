@@ -131,21 +131,13 @@
     <jakarta-servlet-jsp-jstl-api.version>3.0.2</jakarta-servlet-jsp-jstl-api.version>
     <jakarta-validation-api.version>3.1.0</jakarta-validation-api.version>
     <jakarta-mail-api.version>2.0.1</jakarta-mail-api.version>
-    <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-    <javax-servlet-jsp-api.version>2.3.3</javax-servlet-jsp-api.version>
-    <javax-servlet-jsp-jstl-api.version>1.2.2</javax-servlet-jsp-jstl-api.version>
-    <javax-validation-api.version>2.0.1.Final</javax-validation-api.version>
-    <javax-mail-api.version>1.6.2</javax-mail-api.version>
     <apache-taglibs-standard.version>1.2.5</apache-taglibs-standard.version>
     <ognl.version>3.3.4</ognl.version>
     <glassfish-jakarta-servlet-jsp-jstl.version>3.0.1</glassfish-jakarta-servlet-jsp-jstl.version>
     <attoparser.version>2.0.7.RELEASE</attoparser.version>
     <unbescape.version>1.1.6.RELEASE</unbescape.version>
-    <spring-framework5.version>5.3.39</spring-framework5.version>
     <spring-framework6.version>6.2.0</spring-framework6.version>
-    <spring-security5.version>5.8.16</spring-security5.version>
     <spring-security6.version>6.4.1</spring-security6.version>
-    <spring-webflow2.version>2.5.1.RELEASE</spring-webflow2.version>
     <spring-webflow3.version>3.0.1</spring-webflow3.version>
     <jackson.version>2.18.2</jackson.version>
     <reactor.version>2024.0.0</reactor.version>
@@ -193,19 +185,7 @@
 
       <dependency>
         <groupId>org.thymeleaf</groupId>
-        <artifactId>thymeleaf-spring5</artifactId>
-        <version>${thymeleaf.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.thymeleaf</groupId>
         <artifactId>thymeleaf-spring6</artifactId>
-        <version>${thymeleaf.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.thymeleaf.extras</groupId>
-        <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         <version>${thymeleaf.version}</version>
       </dependency>
 
@@ -218,12 +198,6 @@
       <dependency>
         <groupId>org.thymeleaf.testing</groupId>
         <artifactId>thymeleaf-testing</artifactId>
-        <version>${thymeleaf.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.thymeleaf.testing</groupId>
-        <artifactId>thymeleaf-testing-spring5</artifactId>
         <version>${thymeleaf.version}</version>
       </dependency>
 
@@ -274,42 +248,6 @@
         <groupId>com.sun.mail</groupId>
         <artifactId>jakarta.mail</artifactId>
         <version>${jakarta-mail-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>${javax-servlet-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
-        <version>${javax-servlet-jsp-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet.jsp.jstl</groupId>
-        <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-        <version>${javax-servlet-jsp-jstl-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-        <version>${javax-validation-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.mail</groupId>
-        <artifactId>javax.mail-api</artifactId>
-        <version>${javax-mail-api.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.mail</groupId>
-        <artifactId>javax.mail</artifactId>
-        <version>${javax-mail-api.version}</version>
       </dependency>
 
       <dependency>
@@ -584,39 +522,23 @@
               <artifact>thymeleaf-examples-core</artifact>
               <artifact>thymeleaf-examples-gtvg-jakarta</artifact>
               <artifact>thymeleaf-examples-gtvg-javax</artifact>
-              <artifact>thymeleaf-examples-spring5</artifact>
-              <artifact>thymeleaf-examples-spring5-extrathyme</artifact>
-              <artifact>thymeleaf-examples-spring5-sayhello</artifact>
-              <artifact>thymeleaf-examples-spring5-springmail</artifact>
-              <artifact>thymeleaf-examples-spring5-stsm</artifact>
-              <artifact>thymeleaf-examples-spring5-thvsjsp</artifact>
               <artifact>thymeleaf-examples-spring6</artifact>
               <artifact>thymeleaf-examples-spring6-extrathyme</artifact>
               <artifact>thymeleaf-examples-spring6-sayhello</artifact>
               <artifact>thymeleaf-examples-spring6-springmail</artifact>
               <artifact>thymeleaf-examples-spring6-stsm</artifact>
               <artifact>thymeleaf-examples-spring6-thvsjsp</artifact>
-              <artifact>thymeleaf-examples-springboot2</artifact>
-              <artifact>thymeleaf-examples-springboot2-biglist-mvc</artifact>
-              <artifact>thymeleaf-examples-springboot2-biglist-webflux</artifact>
-              <artifact>thymeleaf-examples-springboot2-sse-webflux</artifact>
-              <artifact>thymeleaf-examples-springboot2-stsm-mvc</artifact>
-              <artifact>thymeleaf-examples-springboot2-stsm-webflux</artifact>
               <artifact>thymeleaf-examples-springboot3</artifact>
               <artifact>thymeleaf-examples-springboot3-biglist-mvc</artifact>
               <artifact>thymeleaf-examples-springboot3-biglist-webflux</artifact>
               <artifact>thymeleaf-examples-springboot3-sse-webflux</artifact>
               <artifact>thymeleaf-examples-springboot3-stsm-mvc</artifact>
               <artifact>thymeleaf-examples-springboot3-stsm-webflux</artifact>
-              <artifact>thymeleaf-examples-springsecurity5</artifact>
-              <artifact>thymeleaf-examples-springsecurity5-websecurity</artifact>
               <artifact>thymeleaf-examples-springsecurity6</artifact>
               <artifact>thymeleaf-examples-springsecurity6-websecurity</artifact>
               <artifact>thymeleaf-tests</artifact>
               <artifact>thymeleaf-tests-core</artifact>
-              <artifact>thymeleaf-tests-spring5</artifact>
               <artifact>thymeleaf-tests-spring6</artifact>
-              <artifact>thymeleaf-tests-springsecurity5</artifact>
               <artifact>thymeleaf-tests-springsecurity6</artifact>
             </excludeArtifacts>
           </configuration>

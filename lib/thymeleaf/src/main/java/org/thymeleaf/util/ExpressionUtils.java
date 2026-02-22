@@ -133,8 +133,6 @@ public final class ExpressionUtils {
                     "org.thymeleaf.standard.expression.IStandardVariableExpressionEvaluator",
                     "org.thymeleaf.standard.expression.IStandardExpressionParser",
                     "org.thymeleaf.standard.expression.IStandardConversionService",
-                    "org.thymeleaf.spring5.context.IThymeleafRequestContext",
-                    "org.thymeleaf.spring5.expression.IThymeleafEvaluationContext",
                     "org.thymeleaf.spring6.context.IThymeleafRequestContext",
                     "org.thymeleaf.spring6.expression.IThymeleafEvaluationContext",
                     // org.springframework

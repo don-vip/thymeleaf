@@ -44,11 +44,8 @@
 
   <modules>
     <module>core</module>
-    <module>spring5</module>
     <module>spring6</module>
-    <module>springboot2</module>
     <module>springboot3</module>
-    <module>springsecurity5</module>
     <module>springsecurity6</module>
   </modules>
 

@@ -87,7 +87,7 @@ on the Spring Security version), with default prefix `sec`. It includes:
 Configuration
 -------------
 
-In order to use the thymeleaf-extras-springsecurity[5|6] modules in our Spring
+In order to use the thymeleaf-extras-springsecurity6 modules in our Spring
 MVC application (or thymeleaf-extras-springsecurity6 in a Spring WebFlux
 application), we will first need to configure our application in the usual way
 for Spring + Thymeleaf applications (*TemplateEngine* bean, *template resolvers*, 
@@ -95,11 +95,10 @@ etc.), and add the SpringSecurity dialect to our Template Engine so that we can
 use the `sec:*` attributes and special expression utility objects:
 
 ```xml
-<bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+<bean id="templateEngine" class="org.thymeleaf.spring6.SpringTemplateEngine">
   ...
   <property name="additionalDialects">
     <set>
-      <!-- Note the package would change to 'springsecurity[5]' if you are using that version -->
       <bean class="org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect"/>
     </set>
   </property>

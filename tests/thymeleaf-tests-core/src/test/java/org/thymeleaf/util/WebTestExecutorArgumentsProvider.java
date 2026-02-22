@@ -35,7 +35,6 @@ public class WebTestExecutorArgumentsProvider implements ArgumentsProvider {
     public Stream<? extends Arguments> provideArguments(final ExtensionContext extensionContext) throws Exception {
         final TestExecutor[] testExecutors =
                 new TestExecutor[] {
-                        TestExecutorFactory.createJavaxWebTestExecutor(),
                         TestExecutorFactory.createJakartaWebTestExecutor()
         };
         return Arrays.stream(testExecutors).map(Arguments::of);
