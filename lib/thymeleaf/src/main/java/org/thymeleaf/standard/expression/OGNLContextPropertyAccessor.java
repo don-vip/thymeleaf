@@ -20,8 +20,6 @@
  */
 package org.thymeleaf.standard.expression;
 
-import java.util.Map;
-
 import ognl.OgnlContext;
 import ognl.OgnlException;
 import ognl.PropertyAccessor;
@@ -64,7 +62,8 @@ public final class OGNLContextPropertyAccessor implements PropertyAccessor {
 
 
 
-    public Object getProperty(final Map ognlContext, final Object target, final Object name) throws OgnlException {
+    @Override
+    public Object getProperty(final OgnlContext ognlContext, final Object target, final Object name) throws OgnlException {
 
         if (!(target instanceof IContext)) {
             throw new IllegalStateException(
@@ -96,7 +95,8 @@ public final class OGNLContextPropertyAccessor implements PropertyAccessor {
 
 
 
-    public void setProperty(final Map context, final Object target, final Object name, final Object value) throws OgnlException {
+    @Override
+    public void setProperty(final OgnlContext context, final Object target, final Object name, final Object value) throws OgnlException {
         // IVariablesMap implementations should never be set values from OGNL expressions
         throw new UnsupportedOperationException("Cannot set values into VariablesMap instances from OGNL Expressions");
     }
@@ -104,6 +104,7 @@ public final class OGNLContextPropertyAccessor implements PropertyAccessor {
 
 
 
+    @Override
     public String getSourceAccessor(final OgnlContext context, final Object target, final Object index) {
         // This method is called during OGNL's bytecode enhancement optimizations in order to determine better-
         // performing methods to access the properties of an object. It's been written trying to mimic
@@ -120,6 +121,7 @@ public final class OGNLContextPropertyAccessor implements PropertyAccessor {
 
 
 
+    @Override
     public String getSourceSetter(final OgnlContext context, final Object target, final Object index) {
         // This method is called during OGNL's bytecode enhancement optimizations in order to determine better-
         // performing methods to access the properties of an object. Given IVariablesMap implementations should never

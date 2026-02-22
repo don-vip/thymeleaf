@@ -97,6 +97,7 @@ public final class OGNLVariableExpressionEvaluator
 
 
 
+    @Override
     public final Object evaluate(
             final IExpressionContext context,
             final IStandardVariableExpression expression,
@@ -336,7 +337,7 @@ public final class OGNLVariableExpressionEvaluator
 
         // We create the OgnlContext here instead of just sending the Map as context because that prevents OGNL from
         // creating the OgnlContext empty and then setting the context Map variables one by one
-        final OgnlContext ognlContext = new OgnlContext(MEMBER_ACCESS, CLASS_RESOLVER, null, context);
+        final OgnlContext ognlContext = new OgnlContext(MEMBER_ACCESS, CLASS_RESOLVER, null, null).withValues(context);
         return ognl.Ognl.getValue(parsedExpression, ognlContext, root);
 
     }
@@ -369,7 +370,7 @@ public final class OGNLVariableExpressionEvaluator
         }
 
         @Override
-        public Class<?> classForName(final String className, final Map context) throws ClassNotFoundException {
+        public Class<?> classForName(final String className, final OgnlContext context) throws ClassNotFoundException {
             if (!ExpressionUtils.isTypeAllowed(className)) {
                 throw new TemplateProcessingException(
                         String.format(
@@ -389,14 +390,15 @@ public final class OGNLVariableExpressionEvaluator
      */
     static final class ThymeleafDefaultClassResolver implements ClassResolver {
 
-        private final ConcurrentHashMap<String, Class> classes = new ConcurrentHashMap<>(101);
+        private final ConcurrentHashMap<String, Class<?>> classes = new ConcurrentHashMap<>(101);
 
         ThymeleafDefaultClassResolver() {
             super();
         }
 
-        public Class classForName(final String className, final Map context) throws ClassNotFoundException {
-            Class result = this.classes.get(className);
+        @Override
+        public Class<?> classForName(final String className, final OgnlContext context) throws ClassNotFoundException {
+            Class<?> result = this.classes.get(className);
             if (result != null) {
                 return result;
             }
@@ -409,7 +411,7 @@ public final class OGNLVariableExpressionEvaluator
             return result;
         }
 
-        private Class toClassForName(String className) throws ClassNotFoundException {
+        private Class<?> toClassForName(String className) throws ClassNotFoundException {
             return Class.forName(className);
         }
 
@@ -423,7 +425,7 @@ public final class OGNLVariableExpressionEvaluator
         }
 
         @Override
-        public boolean isAccessible(final Map context, final Object target, final Member member, final String propertyName) {
+        public boolean isAccessible(final OgnlContext context, final Object target, final Member member, final String propertyName) {
             int modifiers = member.getModifiers();
             if (!Modifier.isPublic(modifiers)) {
                 return false;
