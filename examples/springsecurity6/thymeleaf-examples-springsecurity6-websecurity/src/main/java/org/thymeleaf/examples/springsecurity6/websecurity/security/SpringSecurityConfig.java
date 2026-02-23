@@ -26,7 +26,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -47,14 +46,14 @@ public class SpringSecurityConfig {
                     .logoutSuccessUrl("/index.html"))
             .authorizeHttpRequests(authorize -> authorize
                     .requestMatchers(
-                            new AntPathRequestMatcher("/"),
-                            new AntPathRequestMatcher("/index.html"),
-                            new AntPathRequestMatcher("/login.html"),
-                            new AntPathRequestMatcher("/css/**"),
-                            new AntPathRequestMatcher("/favicon.ico")).permitAll()
-                    .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
-                    .requestMatchers(new AntPathRequestMatcher("/user/**")).hasRole("USER")
-                    .requestMatchers(new AntPathRequestMatcher("/shared/**")).hasAnyRole("USER","ADMIN")
+                            "/",
+                            "/index.html",
+                            "/login.html",
+                            "/css/**",
+                            "/favicon.ico").permitAll()
+                    .requestMatchers("/admin/**").hasRole("ADMIN")
+                    .requestMatchers("/user/**").hasRole("USER")
+                    .requestMatchers("/shared/**").hasAnyRole("USER","ADMIN")
                     .anyRequest().authenticated())
             .exceptionHandling(handling -> handling
                     .accessDeniedPage("/403.html"));
