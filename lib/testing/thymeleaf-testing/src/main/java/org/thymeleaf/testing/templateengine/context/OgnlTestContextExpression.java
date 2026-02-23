@@ -25,7 +25,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import ognl.Ognl;
-import ognl.OgnlContext;
 import ognl.OgnlException;
 import org.thymeleaf.exceptions.TemplateProcessingException;
 import org.thymeleaf.expression.Aggregates;
@@ -65,11 +64,11 @@ public final class OgnlTestContextExpression implements ITestContextExpression {
     
     public Object evaluate(final Map<String,Object> context, final Locale locale) {
 
-        final OgnlContext contextVariables = new OgnlContext(null, null, null);
+        final Map<String,Object> contextVariables = new HashMap<String, Object>();
         final Map<String,Object> expressionUtilityObjects =
                 buildExpressionEvaluationUtilityObjects(locale);
         if (expressionUtilityObjects != null) {
-            contextVariables.setValues(expressionUtilityObjects);
+            contextVariables.putAll(expressionUtilityObjects);
         }
         
         try {
